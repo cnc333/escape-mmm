@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1/dist/jquery.toast.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#">Escape MMM</a>
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNav" aria-controls="collapsibleNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNav">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item ml-md-4">
+          <span class="navbar-text">
+            AirDrop Pool: 
+            <span id="airdrop-pool">
+              0.0000
+            </span>
+            ETH
+          </span>
+        </li>
+        <li class="nav-item ml-md-4">
+          <span class="navbar-text">
+            AirDrop Rate: 
+            <span id="airdrop-rate">0.00</span>
+            %
+          </span>
+        </li>
+        <li class="nav-item ml-md-4">
+          <span class="navbar-text">
+            My Assets: 
+            <code class="count-assets">
+              0.000000000000000000
+            </code>
+            ETH
+          </span>
+        </li>
+      </ul>
+      <a name="x-token" id="x-token" class="btn btn-info" href="https://token.teamx.club" role="button">X Token</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid px-0">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">Keep Away From MMM</h1>
+        <p class="lead">МММ was a Russian company that perpetrated one of the world's largest Ponzi schemes of all time, in the 1990s. By
+          different estimates from 5 to 10 million people lost their savings.</p>
+        <hr class="my-2">
+        <p>
+          <a href="https://en.wikipedia.org/wiki/MMM_(Ponzi_scheme_company)" target="_blank">More info</a>
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-md btn-block" href="#m" role="button">Wanna Try? But Keep your rationality!</a>
+        </p>
+      </div>
+      <div id="m"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" id="operation">
+      <div class="col">
+        <div class="card border-success text-center">
+          <div class="h4 card-header bg-transparent border-success">
+            Provide Help &AMP; Get Interest
+          </div>
+          <div class="card-body text-success">
+            <p class="card-text">
+              As Provided, you can apply for the corresponding amount
+              <br> provide >= 1 finney ETH will have chance to get airdrop
+            </p>
+            <form>
+              <div class="form-group row">
+                <label for="provide-amount" class="col-sm-4 col-form-label">Provide help</label>
+                <div class="col-sm-8 input-group">
+                  <input type="number" name="provide-amount" step="0.001" id="provide-amount" class="form-control" placeholder="Provide amount"
+                    aria-describedby="eth-append">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="eth-append">ETH</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="button" id="btn-provide" class="btn btn-primary btn-md btn-block">Confirm Provision</button>
+                </div>
+                <div class="col">
+                  <button type="button" id="btn-provide-balance" class="btn btn-primary btn-md btn-block">Provide Using Balance</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-info text-center">
+          <div class="h4 card-header bg-transparent border-info">
+            Apply Help To Get Free Balance
+          </div>
+          <div class="card-body text-info">
+            <p class="card-text">
+              The limit to Apply for help is your offered amount with interest
+              <br> It is allowed to apply for help <span class="i-period">6 Hours</span> after you offered
+            </p>
+            <form>
+              <div class="form-group row">
+                <label for="apply-amount" class="col-sm-4 col-form-label">Apply help</label>
+                <div class="col-sm-8 input-group">
+                  <input type="number" name="accept-amount" step="0.001" id="accept-amount" class="form-control" placeholder="Apply amount" aria-describedby="eth-append">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="eth-append">ETH</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="button" id="btn-accpet" class="btn btn-primary btn-md btn-block">Confirm Application</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4" id="assets">
+      <div class="col">
+        <div class="card border-primary text-center">
+          <div class="h4 card-header bg-transparent border-primary">
+            My Assets
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">
+                Total Assets: 
+                <code class="count-assets">
+                  0.000000000000000000
+                </code>
+                ETH
+            </h3>
+            <div class="row mt-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col text-right">
+                      Balance (Can withdraw) :
+                    </div>
+                    <div class="col text-left" id="player-balance" data-toggle="tooltip" title="Click to Withdraw" style="cursor: pointer;">
+                      <span style="font-family: Consolas, Monaco, monospace;" id="balance">0.000000000000000000</span>
+                      ETH                  
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                      <div class="col text-right">
+                        Applicable (Can Apply) :
+                      </div>
+                      <div class="col text-left">
+                        <span style="font-family: Consolas, Monaco, monospace;" id="applicable">0.000000000000000000</span>
+                        ETH                  
+                      </div>
+                    </div>                
+                </div>
+                <div class="w-100 mt-1"></div>
+                <div class="col">
+                    <div class="row">
+                      <div class="col text-right">
+                        Provided (Total) :
+                      </div>
+                      <div class="col text-left">
+                        <span style="font-family: Consolas, Monaco, monospace;" id="provided">0.000000000000000000</span>
+                        ETH                  
+                      </div>
+                    </div>             
+                </div>
+                <div class="col">
+                    <div class="row">
+                      <div class="col text-right">
+                        Applied (Total) :
+                      </div>
+                      <div class="col text-left">
+                        <span style="font-family: Consolas, Monaco, monospace;" id="applied">0.000000000000000000</span>
+                        ETH                  
+                      </div>
+                    </div>            
+                </div>
+                <div class="w-100 mt-1"></div>
+                <div class="col">
+                    <div class="row">
+                      <div class="col text-right">
+                        AirDrop (Winned) :
+                      </div>
+                      <div class="col text-left">
+                        <span style="font-family: Consolas, Monaco, monospace;" id="airdroped">0.000000000000000000</span>
+                        ETH                  
+                      </div>
+                    </div>           
+                </div>
+                <div class="col">
+                    <div class="row">
+                      <div class="col text-right">
+                        Affiliate (Reward) :
+                      </div>
+                      <div class="col text-left">
+                        <span style="font-family: Consolas, Monaco, monospace;" id="affied">0.000000000000000000</span>
+                        ETH                  
+                      </div>
+                    </div>           
+                </div>
+                <div class="w-100 mt-1"></div>
+                <div class="col site d-none">
+                    <div class="row">
+                      <div class="col text-right">
+                          WebSite (Reward) :
+                      </div>
+                      <div class="col text-left">
+                        <span style="font-family: Consolas, Monaco, monospace;" id="siteEarned">0.000000000000000000</span>
+                        ETH                  
+                      </div>
+                    </div>             
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-black-50 py-3">
+      <div class="row">
+        <div class="col"><hr></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            TeamX.Club &COPY; 2018 Team X All Rights Received.
+        </div>
+        <div class="col-xs-12 col-sm-8 text-right">
+          Earn 5% From Your Referer:<br>
+          <span style="word-break: break-all;cursor: pointer;" id="referer-link" data-toggle="tooltip" title="Click to Copy Link">
+          </span>
+        </div>
+      </div>
+    </footer>  
+  </div>
+
+  <!-- modals -->
+  <div id="no-metamask-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="alert alert-warning my-0" role="alert">
+          <strong>You Should Installed and logged into MetaMask to Deal the Business.</strong>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="not-mainnet-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="alert alert-warning my-0" role="alert">
+          <strong>Please Use The Mainnet To Deal with this page</strong>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/mmm.m.js"></script>
+</body>
+
+</html>
